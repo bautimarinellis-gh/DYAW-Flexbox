@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL DIARIO</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div class="layout">
+        <div class="content">
+            <header class="header">
+                <div class="header__container">
+                    <h1 class="header__title">EL DIARIO</h1>
+                    <time class="header__date" datetime="2025-05-22">22 de Mayo, 2025</time>
+                </div>
+                <nav class="nav">
+                    <button class="nav__toggle" aria-label="Abrir menú">☰</button>
+                    <ul class="nav__menu">
+                        <li><a href="#politica">Política</a></li>
+                        <li><a href="#economia">Economía</a></li>
+                        <li><a href="#deportes">Deportes</a></li>
+                        <li><a href="#cultura">Cultura</a></li>
+                    </ul>
+                </nav>
+            </header>
+ 
+            <main class="main">
+                <article class="featured-news">
+                    <img src="img/cap.jpg" alt="Ministro de Economía" class="featured-news__image">
+                    <h2 class="featured-news__title">Nuevo Plan Económico: El Ministro Anuncia Medidas para Controlar la Inflación</h2>
+                    <p class="featured-news__description">El Ministro de Economía presentó un paquete de medidas que incluyen controles de precios y estímulos a la producción local. "Estamos trabajando para estabilizar la economía", aseguró.</p>
+                    <a href="#" class="featured-news__link">Leer más</a>
+                </article>
+
+                <section class="secondary-news">
+                    <article class="news-card">
+                        <img src="img/meli.jpg" alt="Ex CEO de Mercado Libre" class="news-card__image">
+                        <h3 class="news-card__title"><a href="#">Después de 26 años: Marcos Galperin deja de ser el CEO de Mercado Libre</a></h3>
+                        <p class="news-card__description">El fundador del gigante del e-commerce pasará a ocupar el cargo de Executive Chairman; el nuevo Chief Executive Officer será Ariel Szarfsztejn</p>
+                    </article>
+                    <article class="news-card">
+                        <img src="img/plat.jpg" alt="Club Platense" class="news-card__image">
+                        <h3 class="news-card__title"><a href="#">Platense: El Calamar a semifinales</a></h3>
+                        <p class="news-card__description">Los mejores memes por la eliminación de River ante Platense: las burlas de los hinchas de Boca y el rol de Falcón Pérez, los elegidos</p>
+                    </article>
+                    <article class="news-card">
+                        <img src="img/quinteros.jpg" alt="Posible DT de Boca" class="news-card__image">
+                        <h3 class="news-card__title"><a href="#">Boca definió el DT a traer: Quinteros, Insúa y Russo, los apuntados</a></h3>
+                        <p class="news-card__description">El Consejo de Fútbol de Boca buscará un técnico de amplia experiencia y que vea el fútbol simple. Pican en punta Quinteros, Insúa y Russo.</p>
+                    </article>
+                </section>
+
+            </main>
+
+            <footer class="footer">
+                <div class="footer__container">
+                    <p class="footer__copyright">© 2024 EL DIARIO. Todos los derechos reservados.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
