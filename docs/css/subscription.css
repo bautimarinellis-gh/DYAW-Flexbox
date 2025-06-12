@@ -109,6 +109,24 @@
     transform: translateY(0);
 }
 
+/* Estilos para mensajes de error */
+.form__error {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid #dc3545;
+}
+
+.form__input--error {
+    border-color: #dc3545 !important;
+    background-color: #fff8f8 !important;
+}
+
+.form__input--error:focus {
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1) !important;
+}
+
 /* Estilos responsivos */
 /* Móvil (hasta 480px) */
 @media (max-width: 480px) {
@@ -229,5 +247,17 @@
         top: 50%;
         transform: translateY(-50%);
     }
+}
+
+.form__greeting {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
