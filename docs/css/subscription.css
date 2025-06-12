@@ -1,0 +1,131 @@
+/* Estilos específicos para la página de suscripción */
+.main__container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.main__title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-button {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Estilos del formulario */
+.form {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-primary);
+}
+
+.form__group {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: 0.7rem;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.form__input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f8f8;
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.form__input:hover {
+    border-color: var(--color-primary);
+}
+
+/* Estilos específicos para diferentes tipos de input */
+.form__input[type="password"] {
+    letter-spacing: 0.1em;
+}
+
+
+/* Estilos del botón de envío */
+.form__submit {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+.form__submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.2);
+}
+
+.form__submit:active {
+    transform: translateY(0);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .main__container {
+        margin: 1rem auto;
+    }
+
+    .form {
+        padding: 1.5rem;
+    }
+
+    .form__input {
+        padding: 0.8rem;
+    }
+
+    .form__submit {
+        padding: 1rem;
+    }
+}
+

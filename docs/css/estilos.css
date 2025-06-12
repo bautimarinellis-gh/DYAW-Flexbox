@@ -209,6 +209,19 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.nav__subscribe {
+    background-color: #ffffff;
+    color: var(--color-primary) !important;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nav__subscribe:hover {
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+}
+
 /* Media Queries */
 @media (min-width: 768px) {
     .header__container {
