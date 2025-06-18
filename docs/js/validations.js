@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Validaciones
     // Evento keydown para actualizar en tiempo real
     nombreInput.addEventListener('keydown', function() {
         // Usamos setTimeout para asegurar que el valor se actualice
