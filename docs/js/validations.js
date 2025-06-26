@@ -198,19 +198,74 @@ document.addEventListener('DOMContentLoaded', function() {
         // Mostrar mensaje emergente
         var message = '';
         if (isValid) {
-            message = 'Formulario enviado correctamente:\n\n';
+            // Recolectar los datos del formulario
+            var datos = {};
             for (var fieldName in fields) {
                 if (fields.hasOwnProperty(fieldName)) {
                     var input = document.getElementById(fieldName);
                     if (input && fieldName !== 'password' && fieldName !== 'password2') {
-                        message += input.previousElementSibling.textContent + ': ' + input.value + '\n';
+                        datos[fieldName] = input.value;
                     }
                 }
             }
-        } else {
-            message = 'Por favor corrija los siguientes errores:\n\n' + errors.join('\n');
-        }
 
-        alert(message);
+            // Enviar los datos al servidor
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify(datos),
+                headers: { 'Content-type': 'application/json; charset=UTF-8' }
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Error en la respuesta del servidor');
+                return response.json();
+            })
+            .then(data => {
+                mostrarModal('¡Envío exitoso!<br>Respuesta del servidor:<br><pre>' + JSON.stringify(data, null, 2) + '</pre>');
+                localStorage.setItem('datosFormulario', JSON.stringify(datos));
+            })
+            .catch(error => {
+                mostrarModal('Error al enviar los datos: ' + error.message);
+            });
+        } else {
+            message = 'Por favor corrija los siguientes errores:<br><br>' + errors.join('<br>');
+            mostrarModal(message);
+        }
+    });
+
+    // Función para mostrar el modal
+    function mostrarModal(mensaje) {
+        var modalMensaje = document.getElementById('modal-mensaje');
+        var modal = document.getElementById('modal');
+        if (modalMensaje && modal) {
+            modalMensaje.innerHTML = mensaje;
+            modal.classList.remove('oculto');
+        }
+    }
+
+    // Función para ocultar el modal
+    var cerrarModal = document.getElementById('cerrar-modal');
+    if (cerrarModal) {
+        cerrarModal.onclick = function() {
+            var modal = document.getElementById('modal');
+            if (modal) {
+                modal.classList.add('oculto');
+            }
+        };
+    }
+
+    // Al cargar la página, precargar datos si existen
+    window.addEventListener('DOMContentLoaded', function() {
+        var datosGuardados = localStorage.getItem('datosFormulario');
+        if (datosGuardados) {
+            var datos = JSON.parse(datosGuardados);
+            for (var fieldName in datos) {
+                if (datos.hasOwnProperty(fieldName)) {
+                    var input = document.getElementById(fieldName);
+                    if (input) {
+                        input.value = datos[fieldName];
+                    }
+                }
+            }
+        }
     });
 }); 
